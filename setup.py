@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="btr",
-    version="0.0.3",
+    version="0.0.4",
     author="Kainjazz",
     author_email="kainjazz@gmail.com",
     description="Reporter from Behave to TestRail",

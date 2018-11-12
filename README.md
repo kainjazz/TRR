@@ -14,6 +14,7 @@
 
 Для начала работы нужно:
 -
+* `from btr import TReporter`
 * Создать фаил testrail.yml в папке feature
 * Заполнить фаил testrail.yml в формате:
     * `base_url : ''` (адрес Вашего сервера TestRail **без http://**)  
