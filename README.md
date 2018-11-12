@@ -1,4 +1,9 @@
 # BTR  Behave-TestRail-Reporter
+
+Установка:
+- 
+`pip install -i https://test.pypi.org/simple/ btr`
+
 Это сервис для:
 -
 * Cоздания тест-кейсов на основе BDD(Behave) в TestRail
