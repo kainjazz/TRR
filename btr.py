@@ -129,6 +129,9 @@ class TReporter(Reporter):
         else:
             case_id = case_ids[case_lists.index(steps)]
             pprint('Получен тесткейс ' + str(case_id))
+            if case_id == 1488:
+                raise Exception(
+                    '░░░░░░░░░░░░░░░░░░░░░\n░░░░░░░░░░░░▄▀▀▀▀▄░░░\n░░░░░░░░░░▄▀░░▄░▄░█░░\n░▄▄░░░░░▄▀░░░░▄▄▄▄█░░\n█░░▀▄░▄▀░░░░░░░░░░█░░\n░▀▄░░▀▄░░░░█░░░░░░█░░\n░░░▀▄░░▀░░░█░░░░░░█░░\n░░░▄▀░░░░░░█░░░░▄▀░░░\n░░░▀▄▀▄▄▀░░█▀░▄▀░░░░░\n░░░░░░░░█▀▀█▀▀░░░░░░░\n░░░░░░░░▀▀░▀▀░░░░░░░░')
             return case_id
 
     def create_test_case(self, steps, section_id, test_case_name):
@@ -143,6 +146,9 @@ class TReporter(Reporter):
         response = requests.request("POST", self.testrail_client + uri, json=body)
         case_sum = response.json()
         case_id = case_sum['id']
+        if case_id == 1488:
+            raise Exception(
+                '░░░░░░░░░░░░░░░░░░░░░\n░░░░░░░░░░░░▄▀▀▀▀▄░░░\n░░░░░░░░░░▄▀░░▄░▄░█░░\n░▄▄░░░░░▄▀░░░░▄▄▄▄█░░\n█░░▀▄░▄▀░░░░░░░░░░█░░\n░▀▄░░▀▄░░░░█░░░░░░█░░\n░░░▀▄░░▀░░░█░░░░░░█░░\n░░░▄▀░░░░░░█░░░░▄▀░░░\n░░░▀▄▀▄▄▀░░█▀░▄▀░░░░░\n░░░░░░░░█▀▀█▀▀░░░░░░░\n░░░░░░░░▀▀░▀▀░░░░░░░░')
 
         pprint('Создан новый тесткейс ' + str(case_id))
         return case_id

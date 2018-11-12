@@ -18,3 +18,5 @@
 * Добвить в before_all строки: 
     "reporter = TReporter()"
     "context.config.reporters.append(reporter)"
+    
+**Может понадобится создать секцию в TestRail**
