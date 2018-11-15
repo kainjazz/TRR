@@ -48,9 +48,10 @@ class TReporter(Reporter):
             else:
                 case_id = self.search_test_case(case.steps, self.section_id, case.name)
                 cases.append((case_id, case))
-        self.run_id = self.create_test_run(cases, self.section_id, feature.name)
+        run_name = feature.name+': '+feature.scenarios[0].name
+        self.run_id = self.create_test_run(cases, self.section_id, run_name)
         for case_id, case in cases:
-            self.send_result(case_id, self.run_id, case.steps, feature.status.name)
+            self.send_result(case_id, self.run_id, case.steps, case.status.name)
 
     def load_yaml(self):
         with open("testrail.yml", 'r')as stream:
@@ -141,7 +142,7 @@ class TReporter(Reporter):
             "template_id": 2,
 
             "custom_steps_separated": [{"content": step_definition,
-                                        'expected': 'Somersby'} for step_definition in steps]
+                                        'expected': 'In step definition'} for step_definition in steps]
         }
         response = requests.request("POST", self.testrail_client + uri, json=body)
         case_sum = response.json()
