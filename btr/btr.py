@@ -99,6 +99,7 @@ class TReporter(Reporter):
                         "content": step.name,
                         "status_id": self.STATUS_MAPS[step.status.name],
                         "comment": 'comment',
+                        "actual": step.exception.__str__()
                     } for step in steps
                 ]}
         response = requests.request("POST", self.testrail_client + uri, json=body, headers=headers)

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="btr",
-    version="0.0.4",
+    version="0.0.5",
     author="Kainjazz",
     author_email="kainjazz@gmail.com",
     description="Reporter from Behave to TestRail",
@@ -16,7 +16,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3.7",
-        "License :: OSI Approved :: LGPLv3+",
+        "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
         "Operating System :: OS Independent",
     ],
 )
