@@ -1,8 +1,9 @@
-import requests
 from pprint import pprint
+
 from behave.reporter.base import Reporter
-import yaml
 from behave.model import ScenarioOutline
+import requests
+import yaml
 
 
 class TReporter(Reporter):
@@ -175,8 +176,3 @@ class TReporter(Reporter):
             return run_id
         else:
             raise AssertionError('Еггог')
-
-        pass
-
-    def end(self):
-        pass
